@@ -109,7 +109,7 @@ console.log(addressBookMainArray);
 // find contact by first name and edit the contact
 let contacts = addressBookMainArray.find(contact => contact.firstName === "Shubham");
 if (contacts){
-    contacts.setFirstName("Rahul");
+    contacts.setFirstName("Baba");
     contacts.setLastName("Kumar");
     contacts.setAddress("bokaro");
     contacts.setCity("jharkhand");
@@ -124,7 +124,7 @@ if (contacts){
 // Delete contact by name
 let delContacts = addressBookMainArray.find(contact => contact.firstName === "Rahul");
 if (delContacts != undefined){
-    addressBookMainArray.pop();
+    //addressBookMainArray.pop();
     console.log("Contact Deleted");
     console.log(addressBookMainArray)
 }else{
@@ -134,4 +134,25 @@ if (delContacts != undefined){
 let numOfContacts = addressBookMainArray.reduce((count, contact) => {
     return count + 1;
         }, 0);
-console.log(numOfContacts);        
+console.log(numOfContacts);
+// checking duplicate entry by using map, filter, reduce methods:
+// map method
+let contactKey = addressBookMainArray.map((contact) => {
+    return `{contact.firstName}`;
+});
+// filter method
+let uniqueContactKeys = contactKey.filter((key, index) => {
+    return contactKey.indexOf(key) === index;
+});
+// reduce method
+let uniqueContacts = uniqueContactKeys.reduce((result, key) => {
+    let contact = addressBookMainArray.find((c) => {
+      return c.firstName === "Baba";
+    });
+    if (contact) {
+      result.push(contact);
+    }
+    return result;
+  }, []);
+  console.log(uniqueContacts);
+
