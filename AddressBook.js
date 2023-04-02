@@ -184,3 +184,6 @@ console.log("City Count: " + countInCity);
 let contactsInState = addressBookMainArray.filter(contact => contact.state === "karnatak");
 let countByState = contactsInState.length;
 console.log("State Count: " + countByState);
+// sort by name
+addressBookMainArray.sort((a, b) => a.firstName.localeCompare(b.firstName));
+console.log(addressBookMainArray);
