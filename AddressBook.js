@@ -37,7 +37,7 @@ class AddressBookMain{
     setLastName(lastName){
         let lastNameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if (lastNameRegex.test(lastName)){
-            this.firstName = lastName;
+            this.lastName = lastName;
         }else throw "Incorrect Last Name";
     }
     getAddress(){
@@ -105,4 +105,19 @@ console.log(addressBookMain);
 let addressBookMainArray = new Array();
 addressBookMainArray.push(new AddressBookMain("Shubham", "Singh", "Chapra", "Bangluru", "Bihar", 123456, 
                             7877767574, "shubham121@gmail.com"));
-console.log(addressBookMainArray);                            
+console.log(addressBookMainArray);
+// find contact by first name and edit the contact
+let contacts = addressBookMainArray.find(contact => contact.firstName === "Shubham");
+if (contacts){
+    // contacts.setFirstName("Rahul");
+    contacts.setLastName("Kumar");
+    contacts.setAddress("bokaro");
+    contacts.setCity("jharkhand");
+    contacts.setState("Bihar");
+    contacts.setZip(654321);
+    contacts.setPhoneNumber(9898989898);
+    contacts.setEmail("rahulkumar121@gmail.com");
+    console.log(addressBookMainArray);
+}else{
+    console.log("Contact Not Found");
+}
