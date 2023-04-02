@@ -130,3 +130,8 @@ if (delContacts != undefined){
 }else{
     console.log("Contact Not Found");
 }
+//Count number of contacts in array
+let numOfContacts = addressBookMainArray.reduce((count, contact) => {
+    return count + 1;
+        }, 0);
+console.log(numOfContacts);        
