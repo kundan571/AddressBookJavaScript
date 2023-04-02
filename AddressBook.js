@@ -105,6 +105,8 @@ console.log(addressBookMain);
 let addressBookMainArray = new Array();
 addressBookMainArray.push(new AddressBookMain("Shubham", "Singh", "Chapra", "Bangluru", "Bihar", 123456, 
                             7877767574, "shubham121@gmail.com"));
+addressBookMainArray.push(new AddressBookMain("Kundan", "Singh", "Chapra", "Bangluru", "Bihar", 123456, 
+                            7877767574, "kundan121@gmail.com"));                            
 console.log(addressBookMainArray);
 // find contact by first name and edit the contact
 let contacts = addressBookMainArray.find(contact => contact.firstName === "Shubham");
@@ -113,7 +115,7 @@ if (contacts){
     contacts.setLastName("Kumar");
     contacts.setAddress("bokaro");
     contacts.setCity("jharkhand");
-    contacts.setState("Bihar");
+    contacts.setState("karnatak");
     contacts.setZip(654321);
     contacts.setPhoneNumber(9898989898);
     contacts.setEmail("rahulkumar121@gmail.com");
@@ -155,4 +157,21 @@ let uniqueContacts = uniqueContactKeys.reduce((result, key) => {
     return result;
   }, []);
   console.log(uniqueContacts);
+// Search by City:
+let searchByCity = addressBookMainArray.reduce((result, contact) => {
+    if (contact.city === "jharkhand"){
+        result.push(contact);
+    }
+    return result;
+}, []);
+console.log(searchByCity);
+// search by state:
+let searchByState = addressBookMainArray.reduce((result, contact) => {
+    if (contact.state === "Bihar"){
+        result.push(contact);
+    }
+    return result;
+}, []);
+console.log(searchByState);
+
 
