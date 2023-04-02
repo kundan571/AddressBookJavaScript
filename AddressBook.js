@@ -37,7 +37,7 @@ class AddressBookMain{
     setLastName(lastName){
         let lastNameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if (lastNameRegex.test(lastName)){
-            this.firstName = lastName;
+            this.lastName = lastName;
         }else throw "Incorrect Last Name";
     }
     getAddress(){
