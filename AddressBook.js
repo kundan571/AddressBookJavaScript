@@ -101,17 +101,8 @@ class AddressBookMain{
 }
 let addressBookMain = new AddressBookMain("Kundan", "Kumar", "Ambakala", "Sheohar", "Bihar", 843334, 9867722626, "kundan@121");
 console.log(addressBookMain);
-try {
-    let newAddressBookMain = new AddressBookMain();
-    newAddressBookMain.setFirstName("Satya");
-    newAddressBookMain.setLastName("Yadav");
-    newAddressBookMain.setAddress("gorakhpur");
-    newAddressBookMain.setCity("pataNahi");
-    newAddressBookMain.setState("uttarprdesh");
-    newAddressBookMain.setZip(123456);
-    newAddressBookMain.setPhoneNumber(8967452363);
-    newAddressBookMain.setEmail("satyayadav121@gmail.com");
-    console.log(newAddressBookMain);
-}catch (exception){
-    console.error(exception);
-}
+// create AddressBook Array
+let addressBookMainArray = new Array();
+addressBookMainArray.push(new AddressBookMain("Shubham", "Singh", "Chapra", "Bangluru", "Bihar", 123456, 
+                            7877767574, "shubham121@gmail.com"));
+console.log(addressBookMainArray);                            
